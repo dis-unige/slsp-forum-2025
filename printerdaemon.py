@@ -55,9 +55,16 @@ for printout in printouts :
         # print OK
         # So convert to PDF
         import pdfkit
-        pdfkit.from_string(printout_letter, 'pdf/printed/' + str(printout_id) + '.pdf')
+        myoptions = {'minimum-font-size': '12',}
+        # pdfkit.from_string(printout_letter, 'pdf/printed/' + str(printout_id) + '.pdf', options = myoptions)
+        
         # from weasyprint import HTML
-        # HTML(printout_letter).write_pdf('pdf/printed/' + str(printout_id) + '.pdf')
+        # pdf = HTML(printout_letter).write_pdf('pdf/printed/' + str(printout_id) + '.pdf')
+        
+        import os
+        from pyhtml2pdf import converter
+        converter.convert(printout_id + '.html', 'pdf/printed/' + printout_id + '.pdf')
+    
         print ('Printed')
         # save the HTML file
         # print(printout_letter)
