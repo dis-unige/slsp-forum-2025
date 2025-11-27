@@ -5,7 +5,7 @@ Project developed in the SLSP Forum 2025
 ## Participants
 
 * Pablo Iriarte
-* Roger Zollinge
+* Roger Zollinger
 * Andreas Ly
 * Nicole Meier
 * Rouven Schabinger
