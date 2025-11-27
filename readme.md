@@ -1,4 +1,6 @@
-# SLSP Forum Alma prining project
+# Pining library information with Python and Alma APIs 
+
+* SLSP Forum 2025
 
 ## Participants
 
