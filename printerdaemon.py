@@ -69,8 +69,8 @@ for printout in printouts :
     if toprint == 1:
         # print OK
         # So convert to PDF
-        import pdfkit
-        pdfkit.from_string(printout_letter, 'pdf/printed/' + str(printout_id) + '.pdf')
+        # import pdfkit
+        # pdfkit.from_string(printout_letter, 'pdf/printed/' + str(printout_id) + '.pdf')
         # from weasyprint import HTML
         # HTML(printout_letter).write_pdf('pdf/printed/' + str(printout_id) + '.pdf')
         print ('Printed')
