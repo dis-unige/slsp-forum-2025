@@ -14,6 +14,8 @@ mystatus = 'pending'
 # other staus : printed, canceled
 apikey = "l8xx152e3d4717324728be090543e0808e0d"
 printer_id = '355935700005520'
+filters = ['TEST1', 'NOT TO PRINT', 'TEST']
+
 # to have ALL 
 
 import requests
@@ -31,10 +33,40 @@ printouts = data['printout']
 
 # Loop inside the printouts
 for printout in printouts :
+    toprint = 1
     printout_id = printout['id']
     printout_date = printout['date']
     printout_type = printout['printout']
     printout_letter = printout['letter']
     print(printout_id)
+    
+    # Filter
+    for filterstr in filters:
+        if (filterstr in printout_letter):
+            print(filterstr + ' found')
+            toprint = 0
+    
+    # Modify the HTML
+    printout_letter = printout_letter.replace('<div class="messageBody">', '<div class="messageBody">TEST MODIFICATION')
+    
+        
+    # PRINT
+    if toprint == 1:
+        # print OK
+        # So convert to PDF
+        import pdfkit
+        pdfkit.from_string(printout_letter, 'pdf/printed/' + str(printout_id) + '.pdf')
+        # from weasyprint import HTML
+        # HTML(printout_letter).write_pdf('pdf/printed/' + str(printout_id) + '.pdf')
+        print ('Printed')
+        # save the HTML file
+        # print(printout_letter)
+        html_file = open(printout_id + '.html','w', encoding='utf-8')
+        html_file.write(printout_letter)
+        html_file.close()       
+        
+    else :
+        # filtered -> store the PDF
+        print ('filtered')
 
 
