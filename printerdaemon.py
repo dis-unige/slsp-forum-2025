@@ -12,7 +12,7 @@ mylimit = '10'
 headers = {'accept': 'application/json'}
 mystatus = 'pending'
 # other staus : printed, canceled
-apikey = "l8xx152e3d4717324728be090543e0808e0d"
+apikey = "xxx"
 printer_id = '355935700005520'
 filters = ['TEST1', 'NOT TO PRINT', 'TEST']
 
