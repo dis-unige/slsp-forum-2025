@@ -2,10 +2,10 @@
 
 ## Participants
 
-* Pablo Iriarte - pablogit
-* Roger Zollinger - rhodijn
-* Andreas Ly - hyerex
-* Nicole Meier - UBnme
-* Rouven Schabinger - Rouven-Schabinger
-* Martin Brossard - Raskimado
-* Moritz Steinmaier - MoritzSte
+* Pablo Iriarte
+* Roger Zollinge
+* Andreas Ly
+* Nicole Meier
+* Rouven Schabinger
+* Martin Brossard
+* Moritz Steinmaier
