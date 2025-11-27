@@ -9,9 +9,9 @@
 
 # Parameters
 mylimit = 50
-apikey = 'headers = {'accept': 'application/json'}'
+apikey = "headers = {'accept': 'application/json'}"
 mystatus = 'pending'
-headers = {'accept': 'application/json'}
+headers = "l8xx152e3d4717324728be090543e0808e0d"
 
 import requests
 myurl = 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1/task-lists/printouts?status=' + mystatus + '&printer_id=' + printer_id + '&limit=' + mylimit + '&offset=0&apikey=' + apikey
