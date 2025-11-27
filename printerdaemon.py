@@ -8,11 +8,12 @@
 # Request to ALMA printouts
 
 # Parameters
-mylimit = 50
-apikey = "headers = {'accept': 'application/json'}"
+mylimit = '10'
+headers = {'accept': 'application/json'}
 mystatus = 'pending'
-headers = "l8xx152e3d4717324728be090543e0808e0d"
-printer_id = 'I_HEPBE23'
+# other staus : printed, canceled
+apikey = "l8xx152e3d4717324728be090543e0808e0d"
+printer_id = 'ALL'
 
 import requests
 
@@ -20,3 +21,6 @@ myurl = 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1/task-lists/printouts?
 
 r = requests.get(myurl, headers=headers, timeout=15)
 
+print (r.text)
+
+# Loop inside the printouts
