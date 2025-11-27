@@ -1,6 +1,6 @@
 # Printing library information with Python and Alma APIs 
 
-* SLSP Forum 2025
+Project developed in the SLSP Forum 2025
 
 ## Participants
 
