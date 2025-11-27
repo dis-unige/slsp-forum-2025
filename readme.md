@@ -1,4 +1,4 @@
-# Pining library information with Python and Alma APIs 
+# Printing library information with Python and Alma APIs 
 
 * SLSP Forum 2025
 
