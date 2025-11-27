@@ -24,6 +24,20 @@ myurl = 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1/task-lists/printouts?
 
 r = requests.get(myurl, headers=headers, timeout=15)
 
+def changestatus(my_id):
+    # modifier le statut sur Alma
+    try:
+        r = requests.post('https://api-eu.hosted.exlibrisgroup.com/almaws/v1/task-lists/printouts/' + my_id + '?op=mark_as_printed&apikey='+apikey, headers=headers, timeout=mytimeout)
+    except:
+        log('Job ' + my_id + ' : Modification du statut sur Alma Erreur -> TIMEOUT')
+    else:
+        # print('Status : ' + str(r.status_code))
+        if (r.status_code == 200):
+            log('Job ' + my_id + ' : Modification du statut sur Alma OK -> Printed')
+        else:
+            log('Job ' + my_id + ' : Modification du statut sur Alma Erreur -> Status code ' + str(r.status_code))
+
+
 # print (r.text)
 
 # Import all the content
@@ -61,9 +75,11 @@ for printout in printouts :
         # from weasyprint import HTML
         # pdf = HTML(printout_letter).write_pdf('pdf/printed/' + str(printout_id) + '.pdf')
         
-        import os
-        from pyhtml2pdf import converter
-        converter.convert(printout_id + '.html', 'pdf/printed/' + printout_id + '.pdf')
+        # import os
+        # from pyhtml2pdf import converter
+        # converter.convert(printout_id + '.html', 'pdf/printed/' + printout_id + '.pdf')
+        
+
     
         print ('Printed')
         # save the HTML file
