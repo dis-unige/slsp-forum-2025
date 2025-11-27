@@ -28,6 +28,7 @@ r = requests.get(myurl, headers=headers, timeout=15)
 
 # Import all the content
 import json
+from weasyprint import HTML
 data = r.json()
 printouts = data['printout']
 
@@ -47,23 +48,20 @@ for printout in printouts :
             toprint = 0
     
     # Modify the HTML
-    printout_letter = printout_letter.replace('<div class="messageBody">', '<div class="messageBody">TEST MODIFICATION')
+    printout_letter = printout_letter.replace('<div class="messageBody">', '<div class="messageBody">TEST MODIFICATION DONE BY SLSP-DEVELOPER-FORUM 2025')
     
         
     # PRINT
     if toprint == 1:
         # print OK
         # So convert to PDF
-        import pdfkit
-        pdfkit.from_string(printout_letter, 'pdf/printed/' + str(printout_id) + '.pdf')
-        # from weasyprint import HTML
-        # HTML(printout_letter).write_pdf('pdf/printed/' + str(printout_id) + '.pdf')
+        # import pdfkit
+        # pdfkit.from_string(printout_letter, 'pdf/printed/' + str(printout_id) + '.pdf')
         print ('Printed')
         # save the HTML file
         # print(printout_letter)
-        html_file = open(printout_id + '.html','w', encoding='utf-8')
-        html_file.write(printout_letter)
-        html_file.close()       
+        HTML(string=printout_letter).write_pdf('pdf/printed/' + str(printout_id) + '.pdf')
+    
         
     else :
         # filtered -> store the PDF
