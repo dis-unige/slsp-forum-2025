@@ -85,10 +85,16 @@ while True:
             ################################
             # print(printout_letter_modif)
             # testing html -> pdf convert libraries
+            
             # pdfkit
             # import pdfkit
             # pdfkit.from_string(printout_letter_modif, 'pdf/printed/' + str(printout_id) + '.pdf')
             
+            # xhtml2pdf
+            # from xhtml2pdf import pisa
+            # with open('pdf/printed/' + str(printout_id) + '.pdf', 'w+b') as result_file:
+                # pisa_status = pisa.CreatePDF(printout_letter, dest=result_file,)
+
             # weasyprint
             from weasyprint import HTML
             if noprint == 0:
