@@ -19,9 +19,9 @@ mylimit = '10'
 # Status of letters imported [pending, printed, canceled]
 mystatus = 'pending'
 # Alma API Key with R/W rights in task-lists
-apikey = "xxx"
-# Printer ID [code number, see the readme to know how to obtain it. Use 'ALL' instead]
-printer_id = '355935700005520'
+apikey = "XXX"
+# Printer ID [code number, use the script https://github.com/dis-unige/almaprinter/blob/main/printers.py to obtain it. Use 'ALL' instead]
+printer_id = 'XXX'
 # Texts used as filter criteria, if found the letter won't be printed
 filters = ['TEST1', 'NOT TO PRINT', 'TEST']
 
