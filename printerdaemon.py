@@ -26,14 +26,6 @@ printer_id = '355935700005520'
 filters = ['TEST1', 'NOT TO PRINT', 'TEST']
 
 ################################
-# API request to import the printouts
-################################
-myurl = 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1/task-lists/printouts?status=' + mystatus + '&printer_id=' + printer_id + '&limit=' + mylimit + '&offset=0&apikey=' + apikey
-headers = {'accept': 'application/json'}
-r = requests.get(myurl, headers=headers, timeout=15)
-# print (r.text)
-
-################################
 # Start the infinite loop
 ################################
 while True:
@@ -46,12 +38,15 @@ while True:
     # 1. Request the API
     ################################
 
+    myurl = 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1/task-lists/printouts?status=' + mystatus + '&printer_id=' + printer_id + '&limit=' + mylimit + '&offset=0&apikey=' + apikey
+    headers = {'accept': 'application/json'}
+    r = requests.get(myurl, headers=headers, timeout=15)
+    # print (r.text)
     data = r.json()
     printouts = data['printout']
     total_record_count = data['total_record_count']
     print('API call OK : ' + str(total_record_count) + ' printouts found')
-    if 'letter' in printout :
-    
+    if total_record_count > 0 :
         ################################
         # 2. Loop inside the printouts
         ################################
@@ -125,6 +120,6 @@ while True:
                     print(printout_id + ': ERROR in status modification -> Status code ' + str(r.status_code))
             print(printout_id + ' END')
     else :
-        print('No letters found')
+        print('No printouts found')
 
 
