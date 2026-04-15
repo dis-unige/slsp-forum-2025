@@ -1,6 +1,6 @@
 # Python and Alma's API for printing: Printing slips at circulation desks
 
-Project developed as part of the SLSP DeveloperForum 2025 held in Zurich on 27 November 2025
+Project developed as part of the SLSP Developer Forum 2025 held in Zurich on 27 November 2025
 
 ## Participants
 
